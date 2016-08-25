@@ -1,0 +1,21 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>new-todo</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Title:</ion-label>
+      <ion-input [(ngModel)]="todo.title" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Complete</ion-label>
+      <ion-checkbox [(ngModel)]="todo.completed"></ion-checkbox>
+    </ion-item>
+  </ion-list> <button clear (click)="save()">Save</button>
+</ion-content>

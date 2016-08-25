@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngIf="todos">
+  <ion-item *ngFor="let todo of todos">
+    <ion-label>{{todo.title}}</ion-label>
+    <ion-checkbox [(ngModel)]="todo.completed"></ion-checkbox>
+  </ion-item>
+</ion-list>
+<p *ngIf="!todos"> No todos </p>
+<button fab fab-bottom fab-right (click)="newTodo()"> New </button> 
+</ion-content>
