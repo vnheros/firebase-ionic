@@ -1,0 +1,11 @@
+<html>
+  <head>
+    <title>OAuth callback</title>
+    <script>
+      var POST_ORIGIN_URI = 'http://localhost:8100';
+      var message = {"status": "200", "jwt":"22222"};
+      window.opener.postMessage(message, POST_ORIGIN_URI);
+      window.close();
+    </script>
+  </head>
+</html>

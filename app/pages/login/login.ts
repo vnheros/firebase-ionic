@@ -1,19 +1,23 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { FbAuth } from '../../providers/fb-auth/fb-auth';
 
-/*
-  Generated class for the LoginPage page.
+//declare var firebase: any;
+//declare var FB: any;
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   templateUrl: 'build/pages/login/login.html',
+  providers: [FbAuth]
 })
+
 export class LoginPage {
 
-  constructor(private navCtrl: NavController) {
+  constructor(private navCtrl: NavController, private fbauth: FbAuth) {
+    //FB.Event.subscribe('auth.authResponseChange', this.checkLoginState);
+  }
 
+  goToFacebookLogin() {
+    this.fbauth.startOAuthFlow();
   }
 
 }
